@@ -1,10 +1,10 @@
-package com.ather.dashboard.dashboard.data
+package com.ather.odometer.odometer.data
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 /**
- * DTO for interacting with Odometer App
+ * DTO for interaction between Odometer and Dashboard
  * */
 @Parcelize
 data class OdometerReading(

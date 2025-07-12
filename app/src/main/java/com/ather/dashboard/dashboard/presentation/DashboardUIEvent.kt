@@ -1,6 +1,6 @@
 package com.ather.dashboard.dashboard.presentation
 
-import com.ather.dashboard.dashboard.data.OdometerReading
+import com.ather.odometer.odometer.data.OdometerReading
 
 /**
  * UI Event for Dashboard Screen

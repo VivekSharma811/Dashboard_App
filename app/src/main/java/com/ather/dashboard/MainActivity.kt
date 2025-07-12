@@ -2,6 +2,7 @@ package com.ather.dashboard
 
 import android.content.IntentFilter
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -32,10 +33,11 @@ class MainActivity : ComponentActivity() {
         viewModel = ViewModelProvider(this)[DashboardViewModel::class.java]
 
         receiver = OdometerReadingReceiver {
+            Log.d("DebugResult", "MainActivity: ${it}")
             viewModel.onUIEvent(DashboardUIEvent.OnOdometerReadingResult(it))
         }
 
-        registerReceiver(receiver, IntentFilter(ODOMETER_READING), RECEIVER_NOT_EXPORTED)
+        registerReceiver(receiver, IntentFilter(ODOMETER_READING), RECEIVER_EXPORTED)
 
         setContent {
             DashboardTheme {

@@ -1,5 +1,6 @@
 package com.ather.dashboard.dashboard.presentation
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -19,6 +20,7 @@ class DashboardViewModel @Inject constructor() : ViewModel() {
         viewModelScope.launch {
             when(event) {
                 is DashboardUIEvent.OnOdometerReadingResult -> {
+                    Log.d("DebugResult", "VM: ${event.reading.speed}")
                     _uiState.update {
                         it.copy(
                             eventCount = it.eventCount + 1,
