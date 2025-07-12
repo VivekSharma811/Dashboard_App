@@ -14,9 +14,7 @@ class OdometerReadingReceiver(private val onResult: (OdometerReading) -> Unit) :
     BroadcastReceiver() {
 
     override fun onReceive(context: Context?, intent: Intent?) {
-        Log.d("DebugResult", "OdometerReadingReceiver1: ${intent?.data}")
         val data = intent?.getParcelableExtra<OdometerReading>(DATA)
-        Log.d("DebugResult", "OdometerReadingReceiver2: ${data}")
         data?.let { onResult(it) }
     }
 }

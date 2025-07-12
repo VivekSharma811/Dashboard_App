@@ -33,7 +33,6 @@ class MainActivity : ComponentActivity() {
         viewModel = ViewModelProvider(this)[DashboardViewModel::class.java]
 
         receiver = OdometerReadingReceiver {
-            Log.d("DebugResult", "MainActivity: ${it}")
             viewModel.onUIEvent(DashboardUIEvent.OnOdometerReadingResult(it))
         }
 

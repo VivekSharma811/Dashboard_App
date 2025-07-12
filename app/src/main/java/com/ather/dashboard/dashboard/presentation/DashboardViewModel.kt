@@ -53,7 +53,6 @@ class DashboardViewModel @Inject constructor() : ViewModel() {
         viewModelScope.launch {
             when (event) {
                 is DashboardUIEvent.OnOdometerReadingResult -> {
-                    Log.d("DebugResult", "VM: ${event.reading.speed}")
                     _uiState.update {
                         it.copy(
                             eventCount = it.eventCount + 1,
