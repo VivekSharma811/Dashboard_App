@@ -3,7 +3,6 @@ package com.ather.dashboard.dashboard.presentation
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import com.ather.dashboard.dashboard.utils.DATA
 import com.ather.odometer.odometer.data.OdometerReading
 
