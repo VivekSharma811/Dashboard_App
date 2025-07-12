@@ -3,6 +3,7 @@ package com.ather.dashboard.dashboard.presentation
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -27,7 +28,7 @@ private fun DashboardScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(20.dp)
+            .padding(50.dp)
     ) {
         Text(
             text = "${state.rpm} RPM",
@@ -36,7 +37,13 @@ private fun DashboardScreen(
 
         Text(
             text = "${state.eventCount} Events",
-            modifier = Modifier.align(Alignment.TopCenter)
+            modifier = Modifier.align(Alignment.TopStart)
+        )
+
+        Text(
+            text = state.currentTime,
+            modifier = Modifier.align(Alignment.BottomCenter),
+            style = MaterialTheme.typography.headlineMedium
         )
     }
 }
